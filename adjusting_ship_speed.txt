@@ -1,0 +1,6 @@
+Currently, the ship moves one pixel per cycle through the while loop, but we
+can take finer control of the ship's speed by adding a ship_speed attribute
+to the Settings class.
+
+We'll use this attribute to determine how far to move the ship on each pass
+through the loop.

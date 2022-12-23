@@ -1,0 +1,43 @@
+Whenever a player presses a key, that keypress is registered
+in Pygame as an event. Each event is picked up by
+pygame.event.get() method.
+
+We need to specify in our _check_events() method what kind of
+events we want the game to check for. 
+
+Each keypress is registered as a KEYDOWN event.
+When Pygame detects a KEYDOWN event, we need to check whether
+the key that was pressed is one that triggers a certain action.
+
+e.g. if the player presses the right arrow key, we want to
+increase the ship's rect.x value to move the ship to the right.
+
+
+ALLOWING CONTINUOUS MOVEMENT
+
+When a player holds down the right arrow key, we want the ship
+to continue moving right until the player releases the key.
+
+We will have the game detect a pygame.KEYUP event so we'll know
+when the right arrow key is released; then we'll use the KEYDOWN
+and KEYUP events together with a flag called moving_right to
+implement continuous motion.
+
+When the moving_right is False, the ship will be motionless.
+When the player presses the right arrow key, we'll set the flag
+to True, and when the player releases the key, we'll set the
+flag to False again.
+
+The Ship class controls all attributes of the ship, so we'll
+give it an attribute called moving_right and an update() method
+to check the status of the moving_right flag. 
+
+The update() method will change the position of the ship if the 
+flag is set to True. We'll call this method once on each pass 
+through the while loop to update the position of the ship.
+
+
+MOVING BOTH LEFT AND right
+
+Now that the ship can move continuously to the right, adding movement to the
+left is straightforward.
