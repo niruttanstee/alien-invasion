@@ -1,0 +1,17 @@
+RUNNING THE GAME IN FULLSCREEN MODE
+
+Pygame has a fullscreen mode that you might like better than running the
+game in a regular window. Some games look better in fullscreen mode, and
+macOS users might see better performance in fullscreen mode.
+
+We can do this by modifying the __init__() method.
+
+When creating the screen surfacem we pass a size of (0, 0) and the parameter
+pygame.FULLSCREEN. This tells Pygame to figure out a window size that will
+fill the screen.
+
+Because we don't know the width and height of the screen ahead of time, we
+update these settings after the screen is created.
+
+We use the width and height attriutes of the screen's rect to update the
+settings object.

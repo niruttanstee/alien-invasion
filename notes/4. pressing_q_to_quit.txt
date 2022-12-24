@@ -1,0 +1,6 @@
+Now that we're responding to keypresses efficiently, we can add another
+way to quit the game.
+
+It gets tedius to click X (close) at the top of the game window to end the
+game every time we test a new feature, so we'll add a keyboard shortcut to
+end the game when the player presses Q.

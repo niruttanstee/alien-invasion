@@ -1,0 +1,41 @@
+ADDING THE ABILITY TO SHOOT BULLETS
+
+This involves adding a new file called bullet.py and making some modification
+to some of the other files we are already using.
+
+We'll right code that fires a bullet, which is represented by a small 
+rectangle, when the player presses the space-bar. Bullets will then travel
+straight up the screen until they disappear off the top of the screen.
+
+
+ADDING THE BULLET SETTINGS
+
+At the end of the __init__() method, we'll update settings.py to include the
+values we'll need for a new Bullet class.
+
+These settings create dark gray bullets with a width of 3 pixels and a height
+of 15 pixels. The bullets will travel slightly slower than the ship.
+
+
+CREATING THE BULLET class
+
+Now we can create the bullet.py file to store our Bullet class.
+We store a decimal value for the bullet's y-coordinate so we can make fine
+adjustments to the bullet's speed.
+
+We then create two more methods update() and draw_bullet()
+
+The update() method manages the bullet's positon. When a bullet is fired, it
+moves up the screen, which corresponds to a decreasing y-coordinate value.
+
+To update the position, we subtract the amount stored in settings.bullet_speed
+from self.y. We then use the value of self.y to set the value of self.rect.y.
+
+The bullet_speed setting allows us to adjust the speed of bullets as the
+game progresses or as needed to refine the game's behaviour. Once a bullet is
+fired, we never change the value of its x-coordinate, so it will travel
+vertically vertically in a straight line even if the ship moves.
+
+When we want to draw a bullet, we call draw_bullet(). the draw.rect() function
+fills the part of the screen defined by the bullet's rect with the color
+stored in self.color.

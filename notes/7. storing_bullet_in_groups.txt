@@ -1,0 +1,20 @@
+STORING BULLETS IN GROUP
+
+Now that we have a Bullet class and the necessary settings defined, we can
+write code to fire a bullet each time the player presses the spacebar.
+
+We'll create a group in AlienInvasion to store all the live bullets so we can
+manage the bullets that have already been fired. 
+
+This group will be an instance of the pygame.sprite.Group class, which 
+behaves like a list with some extra fuctionality that's helpful when building
+games.
+
+We'll use this group to draw bullets to the screen on each pass through the
+main loop and to update each bullet's position.
+
+The group is created in __init__()
+
+When we call update() on a group, the group automatically calls the update()
+for each sprite in the group. The line self.bullets.update() calls
+bullet.update() for each bullet we place in the group bullets.

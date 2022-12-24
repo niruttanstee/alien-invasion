@@ -1,0 +1,18 @@
+LIMITNG THE NUMBER OF BULLETS
+
+Many shooting games limit the number of bullets a player can have on the
+screen at one time; doing so encourages players to shoot accurately.
+
+We'll do the same in Alien Invasion.
+
+First, store the number of bullets allowed in settings.py.
+
+We'll use this setting in AlienInvasion to check how many bullets exist 
+before creating a new bullet in _fire_bullet(). When the player presses the
+spacebar, we check the length of bullets.
+
+If len(self.bullets) is less than the number specified, then create a new
+bullet. Otherwise do nothing.
+
+We'll now refactor the AlienInvasion class to create a seperate method for
+bullet management. We'll call this method _update_bullets().

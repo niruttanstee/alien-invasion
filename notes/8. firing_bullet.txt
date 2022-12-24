@@ -1,0 +1,27 @@
+FIRING BULLETS
+
+In AlienInvasion, we need to modify _check_keydown_events() to fire a bullet
+when a player presses the spacebar. We don't need to change 
+_check_keyup_events() because nothing happens when the spacebar is released.
+
+We also need to modify _update_screen() to make sure each bullet is drawn to
+the screen before we call flip().
+
+We know there will be a bit of work todo when we fire a bullet, so let's
+write a  new method _fire_bullet(), to handle this work.
+
+First we import Bullet, then we call _fire_bullet() when the spacebar is
+pressed.
+
+In _fire_bullet(), we make an instance of Bullet and call it new_bullet().
+We then add it to the group of bullets using the add() method. This method is
+similar to the append() method, but it's a method that's written specifically
+for Pygame groups.
+
+The bullets.sprites() method returns a list of all sprites in the group
+bullets. To draw all fired bullets to the screen, we loop through the sprites
+in bullets and call draw_bullets() on each one.
+
+When we run alien_invasion.py now, you should be able to move the ship right
+and left, and fire as many bullets as you want. The bullets travel up the
+screen and disappear when they reach the top.

@@ -1,0 +1,26 @@
+DELETING OLD BULLETS
+
+At the moment, the bullets disappear when they reach the top, but only
+because Pygame can't draw them above the top of the screen. The bullets
+actually continue to exist; their y-coordinate values just grow increasingly
+negative.
+
+This is a problem, because they continue to consume memory and processing
+power.
+
+Thus we will do something called garbage collection to get rid of the bullets.
+Otherwise, the game will slow down from doing so much unecessary work.
+
+To do this, we need to detect when the bottom value of the bullet's rect has
+a value of 0, which indicates the bullet has passed off the top of the
+screen.
+
+As we can't remove items from a list or group within a for loop, we have to
+loop over a copy of the group. We use the copy() method to set up the for
+loop, which enables us to modify bullets inside the loop.
+
+We then check to see if the bullet has disappeared off the top of the screen.
+If it has, we then remove it from bullets.
+
+We then insert a print() call to being deleted when they reach the top of the
+screen.

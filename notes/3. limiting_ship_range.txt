@@ -1,0 +1,19 @@
+At this point, the ship will disappear off either edge of the screen if we
+hold down an arrow key long enough. Let's correct this so the ship stops
+moving when it reaches the screen's edge.
+
+We can do this by modifying the update() method in the Ship class.
+
+The code checks the position of the ship before changing the value of 
+self.x. The code self.rect.right returns the x-coordinate of the right edge
+of the ship's rect. If this is less than the value returned by the
+self.screen_rect.right, the ship hasn't reached the right edge of the screen.
+
+
+REFACTORING _check_events()
+
+The _check_events() methid will increase in length as we continue to develop
+the game, so let's break _check_events() into two more methods:
+one that handles KEYDOWN events and another that handles KEYUP events.
+
+We make two helper methods.
